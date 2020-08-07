@@ -62,6 +62,24 @@
 
        当commit过多时候 objects 会无限扩大
        但是 git会对内容相同的文件只会存一个blob，blob和文件名一点关系没有，多数为变更的blob都是相同的，所以只会存一个blob，这样可以节省很多空间。
+##分离头指针
+	git checkout commitid 就会出现分离头指针（detached HEAD）
+	分离头指针会造成当前修改丢失
+	需要将当前指针指向一个 分支 git branch <new-branch-name> commitid
+##分支（Branch）操作
+        查看分支：git branch
+	创建分支：git branch <name>
+	切换分支：git checkout <name>
+	创建+切换分支：git checkout -b <name>
+	删除分支：git branch -d <name>
+	合并分支：git merge <name>
+	查看父分
+##commit 比较（diff）
+        git diff commitid1 commitid2
+	或者
+	git diff HEAD HEAD~1
+	git diff HEAD HEAD^
+	比较HEAD 与 上一个 节点区别
 
 
 
